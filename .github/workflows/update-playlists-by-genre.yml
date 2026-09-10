@@ -1,0 +1,41 @@
+name: Update M3U8 Playlists by Genre
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-playlists:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          
+      - name: Install Playwright browsers and dependencies
+        uses: microsoft/playwright@v1
+        with:
+          version: latest
+          
+      - name: Generate M3U8 playlists by genre
+        run: |
+          python create_m3u8_by_genre.py
+          
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add playlists/
+          git diff --staged --quiet || git commit -m "chore: update M3U8 playlists by genre [skip ci]"
+          git push

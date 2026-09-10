@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "hanh-dong",
+    "name": "Hành Động",
+    "max_pages": 2
+  },
+  {
+    "slug": "tinh-cam",
+    "name": "Tình Cảm",
+    "max_pages": 2
+  },
+  {
+    "slug": "co-trang",
+    "name": "Cổ Trang",
+    "max_pages": 2
+  },
+  {
+    "slug": "hai",
+    "name": "Hài",
+    "max_pages": 2
+  },
+  {
+    "slug": "kinh-di",
+    "name": "Kinh Dị",
+    "max_pages": 2
+  },
+  {
+    "slug": "gay-can",
+    "name": "Gây cấn",
+    "max_pages": 2
+  },
+  {
+    "slug": "bi-an",
+    "name": "Bí Ẩn",
+    "max_pages": 2
+  }
+]
