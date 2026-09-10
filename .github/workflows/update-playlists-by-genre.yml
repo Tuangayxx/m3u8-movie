@@ -23,10 +23,9 @@ jobs:
         run: |
           pip install -r requirements.txt
           
-      - name: Install Playwright browsers and dependencies
-        uses: microsoft/playwright@v1
-        with:
-          version: latest
+      - name: Install Playwright browsers and system dependencies
+        run: |
+          playwright install --with-deps chromium
           
       - name: Generate M3U8 playlists by genre
         run: |
